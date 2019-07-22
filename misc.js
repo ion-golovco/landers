@@ -1,4 +1,4 @@
-let i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11;
+let i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -17,6 +17,10 @@ function setup() {
     i9 = loadImage("assets/barrack.png")
     i10 =loadImage("assets/land.png")
     i11 = loadImage("assets/farm.png")
+
+    i12 = loadImage("assets/title.png")
+    i13 = loadImage("assets/back.png")
+
 
     w = (width) / 32
     h = (height) / 16
@@ -133,6 +137,7 @@ function areaA(x, y) {
         }
     }
     spotA = 1
+    maper = 0
 }
 
 function biomeC() {
@@ -205,6 +210,7 @@ function spawnE(rn) {
     ine++
     noSpot(rn)
     comBonus(rn)
+    maper = 0
     return
 }
 
@@ -241,6 +247,7 @@ function buyLandPlayer() {
             buyingLand.push([i.x, i.y])
         }
     }
+    maper = 0
 }
 function place(x, y) {
     let arre = []
@@ -262,6 +269,7 @@ function place(x, y) {
             }
         }
     }
+    maper = 0
 }
 function newLand(tile) {
     if (tile.owned !== undefined) {
@@ -277,6 +285,7 @@ function newLand(tile) {
     } else if (tile.i == "Mountain") {
         goldB++
     }
+    maper = 0
 }
 
 function buttonMarket(x, y) {
@@ -290,6 +299,7 @@ function buttonLand(x, y) {
     if (LocalButtonPress(x, y, n, h * 11)) {
         player1.buyLand()
     }
+    maper = 0
 }
 function buttonFarm(x, y) {
     let n = 310 - w * 6
@@ -334,6 +344,7 @@ function buttonArmy(x, y) {
     if (LocalButtonPress(x, y, n, h * 13) && barrackU == 1) {
         player1.buyArmy()
     }
+    maper = 0
 }
 
 
@@ -369,6 +380,7 @@ function isItArmyIClicked(x, y) {
             }
         }
     }
+    maper = 0
 }
 function movingArmy(t) {
     movingAr = []
@@ -409,6 +421,7 @@ function movingClick(x, y) {
         clicker = 0
         movingArmyA = 0
     }
+    maper = 0
 }
 function mousePressed() {
     if (orinS == 1) {
@@ -465,6 +478,7 @@ function moveToTarget(index) {
         computerArmy[index].time = 200
         computerArmy[index].move(tilesClass[moves[0][1]])
     }
+    maper = 0
 }
 function possibleMoves(index) {
     let arre = []
@@ -488,6 +502,7 @@ function conquest(army, tile) {
         tilesClass[tile].owned = "player"
         tilesClass[tile].timer = 1000
     }
+    maper = 0
 }
 
 function deleteCArmy(x, y) {
@@ -496,6 +511,7 @@ function deleteCArmy(x, y) {
             computerArmy.splice(i, 1)
         }
     }
+    maper = 0
 }
 function deleteArmy(x, y) {
     for (let i in playerArmy) {
@@ -503,6 +519,7 @@ function deleteArmy(x, y) {
             playerArmy.splice(i, 1)
         }
     }
+    maper = 0
 }
 function cConquest(army, tile) {
     tilesClass[tile].timer--
@@ -510,6 +527,7 @@ function cConquest(army, tile) {
         tilesClass[tile].owned = "computer0"
         tilesClass[tile].timer = 1000
     }
+    maper = 0
 }
 function buttonStart(x,y){
     if((x > wer*7) && (y > oner+50) && (x <wer*2+ wer*7) && (y < oner+100)){

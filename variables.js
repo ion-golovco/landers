@@ -34,8 +34,8 @@ let arre = []
 let timer = 0, timerA = 0;
 let spot = [], spotA = 0;
 
-let goldB = 600.8; foodB = 700.7; woodB = 700.1
-let goldC = 1000.8; foodC = 2000.7; woodC = 2000.1
+let goldB = 3; foodB = 3; woodB = 3
+let goldC = 3; foodC = 3; woodC = 3
 let goldCe = 0, foodCe = 0
 
 let goldDe = 0, foodDe = 0
